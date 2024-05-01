@@ -1,0 +1,44 @@
+Set parameter Username
+Academic license - for non-commercial use only - expires 2025-02-28
+Gurobi Optimizer version 11.0.1 build v11.0.1rc0 (win64 - Windows 11.0 (22631.2))
+
+CPU model: AMD Ryzen 5 5500U with Radeon Graphics, instruction set [SSE2|AVX|AVX2]
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+
+Optimize a model with 141 rows, 50 columns and 282 nonzeros
+Model fingerprint: 0x95f9106a
+Variable types: 0 continuous, 50 integer (50 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e-02, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 9.0400000
+Presolve removed 52 rows and 5 columns
+Presolve time: 0.02s
+Presolved: 89 rows, 45 columns, 210 nonzeros
+Variable types: 0 continuous, 45 integer (45 binary)
+Found heuristic solution: objective 10.3700000
+
+Root relaxation: objective 1.158000e+01, 32 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   11.58000    0   30   10.37000   11.58000  11.7%     -    0s
+H    0     0                      10.6500000   11.58000  8.73%     -    0s
+H    0     0                      11.1000000   11.58000  4.32%     -    0s
+H    0     0                      11.1600000   11.16000  0.00%     -    0s
+     0     0          -    0        11.16000   11.16000  0.00%     -    0s
+
+Cutting planes:
+  Zero half: 3
+  BQP: 2
+
+Explored 1 nodes (42 simplex iterations) in 0.11 seconds (0.00 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 5: 11.16 11.1 10.65 ... 9.04
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.116000000000e+01, best bound 1.116000000000e+01, gap 0.0000%

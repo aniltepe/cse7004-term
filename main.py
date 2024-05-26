@@ -1,6 +1,7 @@
 import sys
 import os
-from solve_mwisp_gurobi import solve
+from solve_mwisp_gurobi import solve as solve_grb
+from solve_mwisp_greedy import solve as solve_gdy
 
 GRAPHS_DIR = 'graphs'
 CREATE_SCRIPT = 'create_graph_file.py'
@@ -11,6 +12,8 @@ for n in [50, 100, 150, 200]:
         exec(open(CREATE_SCRIPT).read())
 
 
-for filename in os.listdir(GRAPHS_DIR):
-    print(filename)
+for file_name in os.listdir(GRAPHS_DIR):
+    print(file_name)
+    file_path = f'./{GRAPHS_DIR}/{file_name}'
+    #solve_grb(file_path)
 

@@ -1,10 +1,10 @@
 import gurobipy as gp
 from gurobipy import GRB
-import time
+import datetime
 
-def solve(graph_file, graphs_dir):
+def solve(graph_file):
     # parse graph info from file
-    f = open(f'./{graphs_dir}/{graph_file}', 'r')
+    f = open(graph_file, 'r')
     lines = f.read().split('\n')
     no_of_nodes = int(lines[0])
     no_of_edges = int(lines[1])
@@ -30,16 +30,17 @@ def solve(graph_file, graphs_dir):
     m.setObjective(gp.quicksum(x[i] * weights[i] for i in range(no_of_nodes)), GRB.MAXIMIZE)
 
     # start time of optimization
-    start = time.time()
+    start = datetime.datetime.now()
 
     # solve
     m.optimize()
 
     # end time of optimization
-    end = time.time()
+    end = datetime.datetime.now()
+    diff = end - start
 
     return {
         'selected_nodes': [i for i in range(no_of_nodes) if x[i].x > 0.5],
         'objective_value': m.objVal,
-        'elapsed_time': end - start
+        'elapsed_time': diff.total_seconds()
     }

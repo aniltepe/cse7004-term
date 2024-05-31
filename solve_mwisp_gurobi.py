@@ -15,7 +15,10 @@ def solve(graph_file):
     edges = [(int(lines[i].split(' ')[0]), int(lines[i].split(' ')[1])) for i in range(no_of_nodes + 2, no_of_nodes + no_of_edges + 2)]
 
     # initialize model
-    m = gp.Model("mip_mwisp")
+    env = gp.Env(empty=True)
+    env.setParam('OutputFlag', 0)
+    env.start()
+    m = gp.Model("mip_mwisp", env=env)
     
     # set time limit to 30 mins
     m.setParam('TimeLimit', 30 * 60)
